@@ -1,5 +1,8 @@
-int a;
-int del=1000;                // duration between temperature readings
+// demo of Starter Kit V2.0 - Grove Temperature Sensor
+//
+
+const int pinTemp = A0;      // pin of temperature sensor
+
 float temperature;
 int B=3975;                  // B value of the thermistor
 float resistance;
@@ -11,9 +14,10 @@ void setup()
 
 void loop()
 {
-    a=analogRead(0);
-    resistance=(float)(1023-a)*10000/a;
-    temperature=1/(log(resistance/10000)/B+1/298.15)-273.15;
-    delay(del);
+    int val = analogRead(pinTemp);                               // get analog value
+    resistance=(float)(1023-val)*10000/val;                      // get resistance
+    temperature=1/(log(resistance/10000)/B+1/298.15)-273.15;     // calc temperature
     Serial.println(temperature);
+    
+    delay(1000);          // delay 1s
 }

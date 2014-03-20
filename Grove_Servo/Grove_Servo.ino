@@ -1,12 +1,17 @@
+// demo of Starter Kit V2.0 - Servo
+
 #include <Servo.h>
+
+const int pinServo = 3;               // pin of servo
+const int potentiometer = 0;          // pin of potentiometer
+
 Servo groveServo; //create a object
 
-int potentiometer = 0;
 int shaft;
 
 void setup()
 {
-    groveServo.attach(3); //the servo is attached to D3
+    groveServo.attach(pinServo);     //the servo is attached to D3
     pinMode(potentiometer, INPUT);
 }
 

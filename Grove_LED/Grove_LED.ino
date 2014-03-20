@@ -1,11 +1,11 @@
 // demo of Grove - Starter V2.0
 // Loovee  2013-3-10
 // as the topic, we will use Grove - Led to make a breath light
-// Grove - LED connect to D5
+// Grove - LED connect to D3
 // the following pin which support PWM can be used:
 // 3, 5, 6, 9, 10, 11
 
-const int pinLed    = 5;                        // pin of led define here
+const int pinLed    = 3;                        // pin of led define here
 
 void setup()
 {

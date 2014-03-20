@@ -1,4 +1,7 @@
-int potentiometer = 0;
+// demo of Starter Kit V2.0
+
+
+const int potentiometer = A0;                    // rotary angle sensor connect to A0
 
 void setup()
 {
@@ -10,5 +13,5 @@ void loop()
 {
     int value = analogRead(potentiometer);
     Serial.println(value);                      // pirnt the value on the serial monitor screen
-    delay(1000);                                // wait 1000ms before printing next value
+    delay(100);                                  // wait 1000ms before printing next value
 }
