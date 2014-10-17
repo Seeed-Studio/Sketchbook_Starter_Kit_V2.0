@@ -17,7 +17,7 @@ void setup()
 
 void loop()
 {
-    if(digitalRead(pinLed))                     // when button is pressed
+    if(digitalRead(pinButton))                     // when button is pressed
     {
         digitalWrite(pinLed, HIGH);             // led on
     }
