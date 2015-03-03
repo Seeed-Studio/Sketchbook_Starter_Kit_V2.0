@@ -1,31 +1,36 @@
-// demo of Grove - Starter V2.0
-// Loovee  2013-3-10
-// as the topic, we will use Grove - Led to make a breath light
-// Grove - LED connect to D3
-// the following pin which support PWM can be used:
-// 3, 5, 6, 9, 10, 11
+// Demo for Grove - Starter V2.0
+// Author: Loovee  2013-3-10
+// Pulses the Grove - LED with a "breathing" effect.
+// Connect the Grove - LED to the socket marked D3
 
-const int pinLed    = 3;                        // pin of led define here
+// Defines the pin to which the LED is connected.
+// Any pin that supports PWM can also be used:
+// 3, 5, 6, 9, 10, 11
+const int pinLed    = 3;
+
+// Define the delay for the "breathing" effect; change this
+// to a smaller value for a faster effect, larger for slower.
+const int BREATH_DELAY = 5; // milliseconds
 
 void setup()
 {
-    pinMode(pinLed, OUTPUT);                    // set led OUTPUT
+    // Configure the LED's pin for output signals.
+    pinMode(pinLed, OUTPUT);
 }
 
 void loop()
 {
-    
     for(int i=0; i<256; i++)
     {
         analogWrite(pinLed, i);
-        delay(5);                               // change delay time can breath faster or slower
+        delay(BREATH_DELAY);
     }
     delay(100);
     
     for(int i=254; i>=0; i--)
     {
         analogWrite(pinLed, i);
-        delay(5);                               // change delay time can breath faster or slower
+        delay(BREATH_DELAY);
     }
     delay(500);
 }
